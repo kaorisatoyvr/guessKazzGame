@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Frijole&family=Lilita+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff"> 
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize-fwd.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Hi-Low Game</h1>
+        </header>
+
+        <main>
+            <picture>
+                <source media="(max-width:761px)" srcset="images/game-bg-mobile.svg"/>
+                <source media="(min-width:760px)" srcset="images/game-bg.svg"/>
+                <img class="game-bg" src="images/game-bg.svg" alt="A monkey on the beach">
+            </picture>
+
+            <!-- splash screen -->
+            <div id="splash-screen" class="screen">
+                <div class="sun-splash"></div>
+
+                <!-- instruction -->
+                <div class="instructions">
+                    <button type="button" id="instruction-btn" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#splash-screen-instruction">
+                        Instruction
+                    </button>
+                </div>
+                <div class="modal fade" id="splash-screen-instruction" tabindex="-1"
+                    aria-labelledby="splash-screen-instructionModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="splash-screen-instructionModalLabel">Setup
+                                    Instructions
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="welcom">Welcome to Guess Kazu Game!</p>
+                                <p>Enter player Name</p>
+                                <p>Click start button to star game!</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    Close</button>
+                                <!-- Game Rule btn -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#game-rules-btn">
+                                    Game Rule</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <img src="images/monkey.svg" alt="a picture of monkey" class="monkey"> -->
+
+                <!-- Modal 2 game rules  -->
+                <div class="modal fade" id="game-rules-btn" tabindex="-1" aria-labelledby="game-rules-btnModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="game-rules-btnModalLabel">Game Rule</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Guess numbers between 1 and 1000</p>
+                                <p>Easy mode: 1-100</p>
+                                <p>Medium mode: 1-500</p>
+                                <p>Hard mode: 1-1000</p>
+                                <p>The player has ten lives and uses one live for each guess.</p>
+                                <p>The game timer is set for 1 minute.</p>
+                                <p>The game is over when the player uses all their lives or when time is up.</p>
+                                <p>If the player win, they earn a prize.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Select Mode -->
+                <div class="wrap">
+                    <fieldset>
+                        <legend>Please select level</legend>
+                        <br>
+                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="mode" value="Easy" id="easy"
+                                autocomplete="off" checked>
+                            <label class="btn btn-outline-primary" for="easy">Easy</label>
+
+                            <input type="radio" class="btn-check" name="mode" value="Medium" id="medium"
+                                autocomplete="off">
+                            <label class="btn btn-outline-success" for="medium">Medium</label>
+
+                            <input type="radio" class="btn-check" name="mode" value="Hard" id="hard"
+                                autocomplete="off">
+                            <label class="btn btn-outline-dark" for="hard">Hard</label>
+                        </div>
+                        <br>
+                    </fieldset>
+                    <p id="result3">Easy: Guess number 0-100</p>
+                </div>
+                <!-- Player Name Input -->
+                <form id="startgame-form">
+                    <input type="text" id="player-name" size="25" required placeholder="Enter Name">
+                    <button id="start-btn" type="submit" class="btn btn-success" disabled>Start Game</button>
+                </form>
+                <!-- monkey message1 -->
+                <div class="balloon5 grid2">
+                    <div class="chatting">
+                        <div class="says">
+                            <p>Enter name and <br>Click <span class="start">Start Game</span> button.</p>
+                        </div>
+                    </div>
+                    <div class="faceicon">
+                        <img src="images/monkey.svg" alt="a picture of monkey" class="monkey">
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- game screen -->
+            <div id="game-screen" style="display: none" class="screen">
+                <div class="container2">
+                    <div class="item"></div>
+
+
+                    <!-- game rules2 -->
+                    <div class="game-rules2">
+                        <button type="button" id="game-rules2" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#game-rules-btn2">
+                            Game Rules</button>
+                    </div>
+
+                    <!-- Modal Game Rules  -->
+                    <div class="modal fade" id="game-rules-btn2" tabindex="-1"
+                        aria-labelledby="game-rules-btn2ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="game-rules-btn2ModalLabel">Setup Instructions
+                                    </h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Guess numbers between 1 and 1000</p>
+                                    <p>Easy mode: 1-100</p>
+                                    <p>Medium mode: 1-500</p>
+                                    <p>Hard mode: 1-1000</p>
+                                    <p>The player has ten lives and uses one live for each guess.</p>
+                                    <p>The game timer is set for 1 minute.</p>
+                                    <p>The game is over when the player uses all their lives or when time is up.</p>
+                                    <p>If the player win, they earn a prize.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                        Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid1">
+                        <div class="score-board">
+                            <div id="name-display">
+                                <p><span></span></p>
+                            </div>
+                            <p>SCORES: <span id="scores"></span></p>
+                            <p>LIVES: <span id="live-remaining"></span></p>
+                        </div>
+                        <p><span id="time-remaining"></span><br>Seconds</p>
+                    </div>
+                    
+
+                    <div class="game-board">
+                        <!-- <p id="guess-message"></p> -->
+                        <form id="game-form">
+                            <input type="number" id="guess-numbers" placeholder="Enter numbers">
+                            <button id="submit-number" type="button" class="btn btn-info">Enter</button>
+                            <button type="button" class="btn btn-secondary reset clearForm">Reset</button>
+                            <button type="button" class="btn btn-danger quit clearForm">Quit</button>
+                        </form>
+                        <p id="message"></p>
+                    </div>
+                    <!-- monkey message2 -->
+                    <div class="balloon5 grid2">
+                        <div class="chatting">
+                            <div class="says">
+                                <p id="result">Easy: Guess number 0-100</p>
+                                <p id="result2"></p>
+                            </div>
+                        </div>
+                        <div class="monkey-wrap">
+                            <img src="images/monkey.svg" alt="a picture of monkey" class="monkey">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Win Screen -->
+            <div id="win-game" style="display: none" class="screen">
+                <p>Congraturations!</p>
+                <p id="win-message"></p>
+                <button type="button" class="btn btn-secondary play-again clearForm">Play Again</button>
+                <button type="button" class="btn btn-danger quit clearForm">Quit</button>
+                <!-- <img class="bg fireworks" src="images/winscreen-bg.svg" alt="A photo of firewoks"> -->
+
+
+                <!-- gold -->
+                <img id="gold-bg" class="bg gold fireworks" src="images/winscreen-bg-gold.svg"
+                    alt="A photo of a monkey holding gold at fireworks beach" srcset="images/winscreen-bg-gold.svg 1920w,
+                            images/winscreen-mb-gold.svg 760w" sizes="(max-width: 760px) calc(100vw - 60px), 900px">
+                <!-- banana -->
+                <img id="banana-bg" class="bg banana fireworks" src="images/winscreen-bg-banana.svg"
+                    alt="A photo of a monkey holding bananas at fireworks beach" srcset="images/winscreen-bg-banana.svg 1920w,
+                            images/winscreen-mb-banana.svg 760w" sizes="(max-width: 760px) calc(100vw - 60px), 900px">
+                <!-- potato -->
+                <img id="potato-bg" class="bg potato fireworks" src="images/winscreen-bg-potato.svg"
+                    alt="A photo of a monkey holding a potato at fireworks beach" srcset="images/winscreen-bg-potato.svg 1920w,
+                            images/winscreen-mb-potato.svg 760w" sizes="(max-width: 760px) calc(100vw - 60px), 900px">
+                <!-- nut -->
+                <img id="nut-bg" class="bg nut fireworks" src="images/winscreen-bg-nut.svg"
+                    alt="A photo of a monkey holding a nut at fireworks beach" srcset="images/winscreen-bg-nut.svg 1920w,
+                            images/winscreen-mb-nut.svg 760w" sizes="(max-width: 760px) calc(100vw - 60px), 900px">
+                <!-- insect -->
+                <img id="insect-bg" class="bg insect fireworks" src="images/winscreen-bg-insect.svg"
+                    alt="A photo of a monkey holding a insect at fireworks beach" srcset="images/winscreen-bg-insect.svg 1920w,
+                            images/winscreen-mb-insect.svg 760w" sizes="(max-width: 760px) calc(100vw - 60px), 900px">
+                <!-- banana peel -->
+                <img id="peel-bg" class="bg peel fireworks" src="images/winscreen-bg-peel.svg"
+                    alt="A photo of a monkey holding a banana peel at fireworks beach"
+                    srcset="images/winscreen-bg-peel.svg 1920w, images/winscreen-mb-peel.svg 760w"
+                    sizes="(max-width: 760px) calc(100vw - 60px), 900px">
+
+
+
+
+            </div>
+
+            <!-- game over screen -->
+            <div id="game-over" style="display: none" class="screen">
+                <p>Game Over...</p>
+                <p>Try again.</p>
+                <button type="button" class="btn btn-secondary play-again clearForm">Play Again</button>
+                <button type="button" class="btn btn-danger quit clearForm">Quit</button>
+                <img class="bg gameover-bg" src="images/game-bg.svg" alt="A photo of rain beach" srcset="images/gameover-bg.svg 1920w,
+                            images/gameover-mobile.svg 760w" sizes="(max-width: 760px) calc(100vw - 60px), 900px">
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; Kaori Sato 2023</p>
+    </footer>
+
+    <!-- 1-jQuery 2-Bootstrap 3-my script-->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script src="scripts/scripts.js"></script>
+</body>
+
+</html>

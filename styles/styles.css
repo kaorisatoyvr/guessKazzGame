@@ -1,0 +1,349 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-family: 'Lilita One', cursive;
+    font-size: 2.5rem;
+    text-align: center;
+    color: rgb(206, 35, 117);
+    text-shadow: 3px 4px #00ffd0;
+    border-color: solid 1px lightgrey;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+}
+
+main {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.fireworks {
+    position: fixed;
+    z-index: -999;
+    display: flex;
+    max-width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+}
+
+.gameover-bg {
+    position: fixed;
+    z-index: -999;
+    display: flex;
+    max-width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+}
+
+/* Modal */
+.modal-title {
+    color: rgb(11, 52, 128);
+    text-shadow: none;
+}
+
+.modal-body {
+    text-align: left;
+}
+
+.instructions {
+    margin-right: 2rem;
+    margin-bottom: 5rem;
+    text-align: right;
+}
+.welcom {
+    text-align: center;
+    color: rgb(206, 35, 117);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* splash screen */
+.container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.player-name {
+    margin: 2rem;
+}
+
+.start {
+    font-weight: bold;
+} 
+
+/* #splash-screen {
+    width: 800px;
+    margin: 5rem auto 0 auto;
+} */
+
+.sun-splash {
+    position: absolute;
+	width: 110px;
+	height: 110px;
+    border-radius: 50%;
+	background: rgb(255,199,0);
+    background: radial-gradient(circle, rgba(255,199,0,1) 0%, rgba(249,122,21,1) 62%, rgba(255,61,11,1) 100%);
+}
+
+/* monkey chat */
+.balloon5 {
+    width: 100%;
+    margin: 1.5em 0;
+    overflow: hidden;
+  }
+  
+  .balloon5 .faceicon img{
+    margin: 0;
+    width: 250px;
+    height: auto;
+    grid-row: 1/2;
+  }
+  
+  .balloon5 .chatting {
+    width: 100%;
+  }
+  
+  .says {
+    display: inline-block;
+    position: relative; 
+    margin: 1rem 0 0 1rem;;
+    padding: 17px 13px;
+    border-radius: 12px;
+    background: #3cc885;
+  }
+  
+  .says:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 18px; 
+    left: -24px;
+    border: 12px solid transparent;
+    border-right: 12px solid #3cc885;
+  }
+  
+  .says p {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .grid2 {
+    max-width: 600px;
+    height: auto;
+    margin: 5rem auto 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+  }
+
+  .grid2 .monkey-wrap {
+    text-align: right;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .grid2 .chatting {
+    grid-column: 2/4;
+    grid-row: 1/2;
+    text-align: left;
+
+  }
+  /* monkey chat end */
+
+  /* game screen */
+.game-bg {
+    position: fixed;
+    min-width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -999;
+    height: auto;
+}
+
+/* score board */
+.container2 {
+	position: relative;
+	width: 500px;
+	height: auto;
+    margin: 0 auto;
+}
+.item {
+	position: absolute;
+    top: 0;
+    left: 0;
+	width: 110px;
+	height: 110px;
+    border-radius: 50%;
+	background: rgb(255,199,0);
+    background: radial-gradient(circle, rgba(255,199,0,1) 0%, rgba(249,122,21,1) 62%, rgba(255,61,11,1) 100%);
+	animation: diagonal-move-anim 60s linear infinite alternate;
+    z-index: -10;
+}
+@keyframes diagonal-move-anim {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(300px, 200px);
+	}
+}
+
+.score-board p {
+    color: rgb(3, 3, 3);
+    margin: 0.5rem 0 0.5rem 0.25rem;
+    font-size: 1rem;
+}
+
+#name-display {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(0, 84, 0);
+}
+.score-board {
+    width: 180px;
+    padding:2em;
+    position: relative;
+    padding:1.5em !important;
+    z-index: 0;
+    background-color:#efede9;
+    opacity: 80%;
+    text-align: left;
+}
+    
+.score-board:before{
+    position: absolute;
+    border: 2px dashed #A7A297;
+    content: '';
+    display: block;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin:5px;
+    z-index: -1;
+    border-radius:10px;
+    }
+
+#guess-numbers {
+    width: 8rem;
+    height: 2rem;
+    border-radius: 3px;
+}
+
+.grid1 {
+    max-width: 300px;
+    margin: 0 auto 3rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.level {
+    font-size: 1.25rem;
+}
+
+.game-rules2 {
+    text-align: right;
+    margin: 0 3rem 3rem 0;
+}
+
+  /* timer */
+  #time-remaining {
+    display: inline-block;
+    border: dotted 4px rgb(206, 35, 117);
+    background-color: #efede9 ;
+    border-radius: 50%;
+    font-size: 3rem;
+    padding: 1rem;
+    grid-template-rows: 1/2;
+    grid-template-columns: 2/3;
+    margin: 0;
+  }
+
+  /* moneky message about high or low */
+  #result2 {
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* win screen */
+#win-game p {
+    font-size: 1.75rem;;
+    color: rgb(255, 254, 254);
+}
+
+/* game over screen */
+#game-over p {
+    font-family: 'Creepster', cursive;
+    color: white;
+    font-size: 3rem;
+}
+
+/* footer */
+
+footer {
+    width: 100%;
+    /* height: auto; */
+    position: absolute;
+    bottom: 0;
+}
+
+footer p {
+    font-size: .75rem;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    /* margin-top: 50rem; */
+}
+
+@media (min-width: 760px) {
+h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+.instructions {
+    margin-bottom: 5rem;
+}
+.container{
+    width: 800px;
+}
+.container2 {
+    width: 800px;
+}
+.grid1 {
+    max-width: 450px;
+    margin: 4rem auto;
+}
+.grid2 {
+    margin-top: 1rem;
+}
+#time-remaining {
+    font-size: 4rem;
+}
+.score-board {
+    width: 200px;  
+}
+.score-board p {
+    font-size: 1.25rem;
+}
+.game-rules2 {
+    margin: 0 0 1rem 0;
+}
+.says {
+    margin: 30px 20px 0 50px;
+}
+.says p {
+    font-size: 1rem;
+}
+.balloon5 .faceicon img{
+    margin: 0 0 0 30px;
+}
+#game-over p {
+    font-size: 3rem;
+}
+}
